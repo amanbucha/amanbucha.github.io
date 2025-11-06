@@ -1,92 +1,120 @@
 export const siteConfig = {
-  name: "Ryan Fitzgerald",
-  title: "Senior Software Engineer",
-  description: "Portfolio website of Ryan Fitzgerald",
+  name: "Aman Bucha",
+  title: "Software Engineer @ Nutanix",
+  description:
+    "Portfolio of Aman Bucha — Systems & Machine Learning engineer passionate about distributed systems, storage, and optimization.",
   accentColor: "#1d4ed8",
   social: {
-    email: "your-email@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://x.com/rfitzio",
-    github: "https://github.com/RyanFitzgerald",
+    email: "arbitraryaman@gmail.com",
+    linkedin: "https://linkedin.com/in/aman-bucha-b27590203",
+    twitter: "https://x.com/aman_bucha",
+    github: "https://github.com/amanbucha",
   },
   aboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos asperiores nihil consequatur tempore cupiditate architecto natus commodi corrupti quas quasi facere est, dignissimos odit nam veniam sapiente ut, vitae eligendi ipsum dolor, nostrum ullam impedit! Corrupti ratione mollitia temporibus necessitatibus, consectetur reiciendis recusandae id, dolorum quaerat, vero pariatur. Ratione!",
-  skills: ["Javascript", "React", "Node.js", "Python", "AWS", "Docker"],
+    "I’m a curious and determined engineer who loves building cool stuffs. My work lies at the intersection of distributed systems, storage, and ML infrastructure. The goal is simple - to do something big that impacts millions of lives.",
+  skills: [ 
+    "C/C++",
+    "Go",
+    "Python",
+    "Docker",
+    "Kubernetes",
+    "gRPC",
+    "ZFS",
+    "PyTorch",
+    "Azure",
+    "Django",
+    "Distributed Systems",
+  ],
   projects: [
     {
-      name: "AI Dev Roundup Newsletter",
+      name: "Distributed Training for ML Models",
       description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      link: "https://aidevroundup.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+        "Built a decentralized distributed training system using Docker, PyTorch, and gRPC — implementing Ring AllReduce for synchronized gradient aggregation across containers.",
+      link: "https://github.com/amanbucha/Distributed-Training",
+      skills: ["PyTorch", "Docker", "gRPC"],
     },
     {
-      name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
+      name: "eBPF-based Function Latency Profiler",
       description:
-        "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
-      link: "https://fullstackextensions.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+        "Developed a user-space latency profiler using eBPF uprobes to trace cache misses and analyze function-level performance using perf counters.",
+      link: "https://github.com/amanbucha/Cache-Scope",
+      skills: ["eBPF", "Linux", "C",],
     },
     {
-      name: "ExtensionKit",
+      name: "Tiering System",
       description:
-        "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
-      link: "https://extensionkit.io/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+        "Developed a tiered storage system that automatically moves files between SSD and HDD based on access frequency using inotify and background worker threads.",
+      link: "https://github.com/amanbucha/Tiering",
+      skills: ["C++", "Linux", "Multithreading"],
+    },
+    {
+      name: "Version FUSE FileSystem",
+      description:
+        "Implemented a FUSE filesystem in Python that maintains lightweight diffs of files, enabling version control, restoration, and auto-pruning of history.",
+      link: "https://github.com/amanbucha/Version-FileSystem",
+      skills: ["Python", "FUSE", "Systems Programming"],
+    },
+    {
+      name: "Last Mile Delivery Optimization",
+      description:
+        "Inter IIT Tech Meet project optimizing dynamic delivery routing using sweep clustering, bin packing heuristics, and image-based volume estimation.",
+      link: "https://github.com/soul0101/InterIIT-Optimization",
+      skills: ["Python", "Optimization", "Computer Vision"],
     },
   ],
   experience: [
     {
-      company: "Tech Company",
-      title: "Senior Software Engineer",
-      dateRange: "Jan 2022 - Present",
+      company: "Nutanix",
+      title: "Member of Technical Staff",
+      dateRange: "Aug 2024 – Present",
       bullets: [
-        "Led development of microservices architecture serving 1M+ users",
-        "Reduced API response times by 40% through optimization",
-        "Mentored team of 5 junior developers",
+        "Parallelized VM attachment tasks reducing distributed share creation from 3 mins → 45s and deletion from 2 mins → 30s.",
+        "Optimized ZFS pool import, cutting import time from 8s → 2s and HA failover from 2 mins → 50s.",
+        "Replaced iSCSI workflow with Nutanix Acropolis Hypervisor for storage communication.",
+        "Implemented NFS-over-TLS tunneling for encrypted data transfer.",
       ],
     },
     {
-      company: "Startup Inc",
-      title: "Full Stack Developer",
-      dateRange: "Jun 2020 - Dec 2021",
+      company: "Rubrik",
+      title: "Software Development Intern",
+      dateRange: "May 2023 – Aug 2023",
       bullets: [
-        "Built and launched MVP product from scratch using React and Node.js",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Collaborated with product team to define technical requirements",
-      ],
-    },
-    {
-      company: "Digital Agency",
-      title: "Frontend Developer",
-      dateRange: "Aug 2018 - May 2020",
-      bullets: [
-        "Developed responsive web applications for 20+ clients",
-        "Improved site performance scores by 35% on average",
-        "Introduced modern JavaScript frameworks to legacy codebases",
+        "Integrated Azure AD-based authentication replacing Storage Access Keys, improving cloud security posture.",
+        "Built archival service to automate snapshot retrieval from customer cloud environments.",
       ],
     },
   ],
   education: [
     {
-      school: "University Name",
-      degree: "Bachelor of Science in Computer Science",
-      dateRange: "2014 - 2018",
-      achievements: [
-        "Graduated Magna Cum Laude with 3.8 GPA",
-        "Dean's List all semesters",
-        "President of Computer Science Club",
-      ],
+      school: "Indian Institute of Technology Guwahati",
+      degree: "B.Tech. in Mathematics and Computing",
+      dateRange: "Nov 2020 – Jun 2024",
+      achievements: ["CPI: 8.66/10", "ICPC Asia West Finalist 2024", "Competitive Programming Head", "Web Developer @ Techniche (IIT Guwahati's Tech Fest)"],
+    },
+  ],
+  blogs: [
+    {
+      title: "Unravelling the Vast Universe",
+      description: "Optimizing PyTorch computation graphs using torch.fx by fusing ops like Conv+BatchNorm.",
+      link: "https://matrix-iitguwahati.medium.com/unravelling-the-vast-universe-def0afeffcf0", 
+    },
+    // {
+    //   title: "Understanding Ring AllReduce in Distributed Training",
+    //   description: "Deep dive into how gradient aggregation works without a central parameter server.",
+    //   link: "https://amanbucha.github.io/ring-allreduce",
+    // },
+  ],
+
+  talks: [
+    {
+      title: "Number Theory and FFT",
+      link: "https://www.youtube.com/watch?v=tQTpSfyTzbs",
+      date: "Algomaniacs 2023",
     },
     {
-      school: "Online Platform",
-      degree: "Full Stack Development Certificate",
-      dateRange: "2019",
-      achievements: [
-        "Completed 500+ hours of coursework",
-        "Built 10+ portfolio projects",
-        "Specialized in React and Node.js",
-      ],
+      title: "Playing with Bits",
+      link: "https://www.youtube.com/watch?v=3FgH7mRgVss",
+      date: "Alogmaniacs 2024",
     },
   ],
 };
