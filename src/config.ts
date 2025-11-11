@@ -27,6 +27,13 @@ export const siteConfig = {
   ],
   projects: [
     {
+      name: "Neural Optimizers",
+      description:
+        "Built a framework to optimize PyTorch models through graph-IR transformations (Conv/Linear/BatchNorm fusion, constant folding, dead-code elimination, quantization passes). Achieved 3× faster inference purely through graph-level optimizations, approaching TorchScript performance.",
+      link: "https://github.com/amanbucha/Neural-Optimizer",
+      skills: ["PyTorch", "Python", "Graoph Optimization"],
+    },
+    {
       name: "Distributed Training for ML Models",
       description:
         "Built a decentralized distributed training system using Docker, PyTorch, and gRPC — implementing Ring AllReduce for synchronized gradient aggregation across containers.",
