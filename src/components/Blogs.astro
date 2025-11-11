@@ -1,6 +1,63 @@
 ---
+// src/components/Blogs.astro
+import katex from "katex";
+import "katex/dist/katex.min.css"; // safe to import here if not already globally imported
 import { siteConfig } from "../config";
+
 const hasBlogs = siteConfig.blogs && siteConfig.blogs.length > 0;
+
+function escapeHtml(unsafe = "") {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+// Split into tokens of math (inline or block) and plain text
+const tokenRegex = /(\$\$[\s\S]+?\$\$|\$[^$\n]+\$)/g;
+
+function renderDescription(desc = "") {
+  if (!desc || !desc.includes("$")) return escapeHtml(desc);
+
+  const parts = desc.split(tokenRegex);
+  return parts
+    .map((part) => {
+      if (!part) return "";
+      // block math $$...$$
+      if (part.startsWith("$$") && part.endsWith("$$")) {
+        const expr = part.slice(2, -2);
+        try {
+          return katex.renderToString(expr, {
+            throwOnError: false,
+            displayMode: false, // keep inline appearance; change to true if you want block
+            output: "html",
+          });
+        } catch {
+          return escapeHtml(part);
+        }
+      }
+
+      // inline math $...$
+      if (part.startsWith("$") && part.endsWith("$")) {
+        const expr = part.slice(1, -1);
+        try {
+          return katex.renderToString(expr, {
+            throwOnError: false,
+            displayMode: false,
+            output: "html",
+          });
+        } catch {
+          return escapeHtml(part);
+        }
+      }
+
+      // plain text
+      return escapeHtml(part);
+    })
+    .join("");
+}
 ---
 
 {hasBlogs && (
@@ -16,19 +73,39 @@ const hasBlogs = siteConfig.blogs && siteConfig.blogs.length > 0;
         />
       </div>
 
-      <div class="lg:col-span-8 space-y-6">
-        {siteConfig.blogs.map((blog) => (
-          <div>
-            <a
-              href={blog.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-indigo-600 hover:underline text-lg font-medium"
-            >
-              {blog.title}
-            </a>
-          </div>
-        ))}
+      <div class="lg:col-span-8">
+        <div class="space-y-8">
+          {siteConfig.blogs.map((blog) => (
+            <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6 hover:shadow-md transition-shadow duration-300">
+              <div class="mb-4">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-900">
+                  <a
+                    href={blog.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-black hover:underline"
+                  >
+                    {blog.title}
+                  </a>
+                </h3>
+
+                {blog.platform && (
+                  <p
+                    class="text-base sm:text-lg"
+                    style={`color: ${siteConfig.accentColor}`}
+                  >
+                    {blog.platform}
+                  </p>
+                )}
+              </div>
+
+              <p
+                class="text-sm sm:text-base text-gray-600"
+                set:html={renderDescription(blog.description)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>

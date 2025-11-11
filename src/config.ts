@@ -27,9 +27,9 @@ export const siteConfig = {
   ],
   projects: [
     {
-      name: "Neural Optimizers",
+      name: "Neural Optimizer",
       description:
-        "Built a framework to optimize PyTorch models through graph-IR transformations (Conv/Linear/BatchNorm fusion, constant folding, dead-code elimination, quantization passes). Achieved 3× faster inference purely through graph-level optimizations, approaching TorchScript performance.",
+        "Built a framework to optimize PyTorch models through graph-IR transformations (Conv/Linear/BatchNorm fusion, constant folding, dead-code elimination, quantization passes). Achieved 3× faster inference, approaching TorchScript performance.",
       link: "https://github.com/amanbucha/Neural-Optimizer",
       skills: ["PyTorch", "Python", "Graoph Optimization"],
     },
@@ -101,9 +101,16 @@ export const siteConfig = {
   ],
   blogs: [
     {
+      title: "Wald's Equation",
+      description: "Using Wald's Equation: $$\\mathbb{E}\\left[\\sum_{i=1}^{N} X_i\\right] = \\mathbb{E}[N]\\cdot\\mathbb{E}[X_1]$$ in CP problems.",
+      link: "https://codeforces.com/blog/entry/148187", 
+      platform: "CodeForces",
+    },
+    {
       title: "Unravelling the Vast Universe",
-      description: "Optimizing PyTorch computation graphs using torch.fx by fusing ops like Conv+BatchNorm.",
+      description: "A philosophical view that the universe is a mathematical structure.",
       link: "https://matrix-iitguwahati.medium.com/unravelling-the-vast-universe-def0afeffcf0", 
+      platform: "Medium",
     },
     // {
     //   title: "Understanding Ring AllReduce in Distributed Training",
