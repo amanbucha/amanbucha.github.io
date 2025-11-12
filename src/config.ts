@@ -11,19 +11,16 @@ export const siteConfig = {
     github: "https://github.com/amanbucha",
   },
   aboutMe:
-    "I’m a curious and determined engineer who loves building cool stuffs. My work lies at the intersection of distributed systems, storage, and ML infrastructure. The goal is simple - to do something big that impacts millions of lives.",
+    "I’m a systems and ML enthusiast who loves building cool stuff. I enjoy applying theory to make complex systems faster and more efficient.",
   skills: [ 
     "C/C++",
-    "Go",
     "Python",
+    "Go",
     "Docker",
     "Kubernetes",
-    "gRPC",
     "ZFS",
     "PyTorch",
     "Azure",
-    "Django",
-    "Distributed Systems",
   ],
   projects: [
     {
@@ -31,42 +28,42 @@ export const siteConfig = {
       description:
         "Built a framework to optimize PyTorch models through graph-IR transformations (Conv/Linear/BatchNorm fusion, constant folding, dead-code elimination, quantization passes). Achieved 3× faster inference, approaching TorchScript performance.",
       link: "https://github.com/amanbucha/Neural-Optimizer",
-      skills: ["PyTorch", "Python", "Graoph Optimization"],
+      skills: ["PyTorch", "Model Optimization"],
     },
     {
       name: "Distributed Training for ML Models",
       description:
         "Built a decentralized distributed training system using Docker, PyTorch, and gRPC — implementing Ring AllReduce for synchronized gradient aggregation across containers.",
       link: "https://github.com/amanbucha/Distributed-Training",
-      skills: ["PyTorch", "Docker", "gRPC"],
+      skills: ["PyTorch", "Docker"],
     },
     {
       name: "eBPF-based Function Latency Profiler",
       description:
         "Developed a user-space latency profiler using eBPF uprobes to trace cache misses and analyze function-level performance using perf counters.",
       link: "https://github.com/amanbucha/Cache-Scope",
-      skills: ["eBPF", "Linux", "C",],
+      skills: ["eBPF", "C",],
     },
-    {
-      name: "Tiering System",
-      description:
-        "Developed a tiered storage system that automatically moves files between SSD and HDD based on access frequency using inotify and background worker threads.",
-      link: "https://github.com/amanbucha/Tiering",
-      skills: ["C++", "Linux", "Multithreading"],
-    },
+    // {
+    //   name: "Tiering System",
+    //   description:
+    //     "Developed a tiered storage system that automatically moves files between SSD and HDD based on access frequency using inotify and background worker threads.",
+    //   link: "https://github.com/amanbucha/Tiering",
+    //   skills: ["C++", "Linux", "Multithreading"],
+    // },
     {
       name: "Version FUSE FileSystem",
       description:
         "Implemented a FUSE filesystem in Python that maintains lightweight diffs of files, enabling version control, restoration, and auto-pruning of history.",
       link: "https://github.com/amanbucha/Version-FileSystem",
-      skills: ["Python", "FUSE", "Systems Programming"],
+      skills: ["Python", "FUSE"],
     },
     {
       name: "Last Mile Delivery Optimization",
       description:
         "Inter IIT Tech Meet project optimizing dynamic delivery routing using sweep clustering, bin packing heuristics, and image-based volume estimation.",
       link: "https://github.com/soul0101/InterIIT-Optimization",
-      skills: ["Python", "Optimization", "Computer Vision"],
+      skills: ["Python", "Heuristics"],
     },
   ],
   experience: [
@@ -102,13 +99,13 @@ export const siteConfig = {
   blogs: [
     {
       title: "Wald's Equation",
-      description: "Using Wald's Equation: $$\\mathbb{E}\\left[\\sum_{i=1}^{N} X_i\\right] = \\mathbb{E}[N]\\cdot\\mathbb{E}[X_1]$$ in CP problems.",
+      description: "Using Wald's Equation: $$\\mathbb{E}\\left[\\sum_{i=1}^{N} X_i\\right] = \\mathbb{E}[N]\\cdot\\mathbb{E}[X_1]$$ to solve complex problems.",
       link: "https://codeforces.com/blog/entry/148187", 
       platform: "CodeForces",
     },
     {
       title: "Unravelling the Vast Universe",
-      description: "A philosophical view that the universe is a mathematical structure.",
+      description: "A philosophical take that the universe is a mathematical structure.",
       link: "https://matrix-iitguwahati.medium.com/unravelling-the-vast-universe-def0afeffcf0", 
       platform: "Medium",
     },
